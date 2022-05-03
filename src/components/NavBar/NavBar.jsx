@@ -1,11 +1,13 @@
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
+import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.css';
 
 
 export default function NavBar(){
 
 return(<Navbar bg="light" expand="lg">
 <Container>
-  <Navbar.Brand href="#home">Gator´s Comida</Navbar.Brand>
+  <Navbar.Brand href="#home" >Gator´s Comida</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="me-auto">
@@ -19,6 +21,7 @@ return(<Navbar bg="light" expand="lg">
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
     </Nav>
+    <CartWidget/>
   </Navbar.Collapse>
 </Container>
 </Navbar>)
