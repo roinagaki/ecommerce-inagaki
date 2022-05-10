@@ -11,12 +11,13 @@ import ItemListContainer from './components/ItemListContainer/ItenListContainer'
 
 
 
+
 function App() {
   return (
     <div className="App">
       <NavBar/>
       <ItemListContainer saludar= {'Gracias por ingresar.'} />
-    </div>
+     </div>
   );
 }
 
