@@ -5,7 +5,8 @@ import ItemList from "../ItemList/ItemList"
 
 
 const ItemListContainer = ( { saludar } ) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  
   
   useEffect(() => {
     task
