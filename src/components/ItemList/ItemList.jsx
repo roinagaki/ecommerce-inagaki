@@ -3,7 +3,7 @@ import Item from '../Item/Item'
 
 const ItemList = ({data}) => {
   return (
-    <div>
+    <div style={ { display:'flex' } } >
         {
             data?.map(el => <Item key={el.id} el={el}/> )
         }

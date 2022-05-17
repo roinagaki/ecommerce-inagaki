@@ -5,8 +5,10 @@ import './NavBar.css';
 
 export default function NavBar(){
 
-return(<Navbar className="navbar" expand="lg">
+return(
+<Navbar className="navbar" expand="lg">
 <Container>
+ 
   <Navbar.Brand className="brand" href="#home" >ADELFA</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -19,8 +21,10 @@ return(<Navbar className="navbar" expand="lg">
     </Nav>
     <CartWidget/>
   </Navbar.Collapse>
+
 </Container>
-</Navbar>)
+</Navbar>
+)
 }
 
 

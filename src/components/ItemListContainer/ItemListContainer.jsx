@@ -19,10 +19,12 @@ const ItemListContainer = ( { saludar } ) => {
  
 
   return (
-    <>
+    <div>
     <div>{saludar}</div>
+    <div style={{ display: 'flex', flexDirection:'row' , flexWrap:'wrap'}}>
     <ItemList data={data}/>
-    </>
+    </div>
+    </div>
   )
 }
 

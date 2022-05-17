@@ -1,5 +1,4 @@
-.cartas-gral{
-    position: relative;
-    flex-wrap: wrap;
+.card{
+    background-color: coral;
+    
 }
-
