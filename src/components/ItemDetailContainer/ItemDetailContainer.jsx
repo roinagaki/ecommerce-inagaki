@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { task } from '../../productos';
+import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
     const [data, setData] = useState({});
-  
-  
+    const { detailId } = useParams ()
+
     useEffect(() => {
-      task
-      .then(resp =>  setData(resp.find(item => item.id === "1")))
-      .catch(err => console.log(err))
-      
+        task(detailId)   
+        .then(respuesta=> setData(respuesta))
+        .catch((err)=> console.log(err))
+           
     }, [])
-     
+    
+
     
   return (
     <div>

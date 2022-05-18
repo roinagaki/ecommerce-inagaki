@@ -10,7 +10,7 @@ const Item = ({el}) => {
       <Container>
         
         <Card  style={{ width: '18rem' }} >
-            <Card.Img  variant="top height-20" src= {img} />
+            <Card.Img  variant="top " src= {img} className="h-30" />
         <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>

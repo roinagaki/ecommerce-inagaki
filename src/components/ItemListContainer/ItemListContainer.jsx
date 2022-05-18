@@ -1,21 +1,41 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
 import { task } from "../../productos"
 import ItemList from "../ItemList/ItemList"
+import { useParams } from 'react-router-dom'
 
 
 
 const ItemListContainer = ( { saludar } ) => {
   const [data, setData] = useState([]);
-  
-  
-  useEffect(() => {
-    task
-    .then(resp => setData(resp))
-    .catch(err => console.log(err))
+  const [loading, setLoading] = useState(true)
+
+    const { id } = useParams() 
+
+    useEffect(() => {
+        if (id) {
+            task()  
+            .then(respuesta=> setData(respuesta))
+            .catch((err)=> console.log(err))
+            .finally(()=>setLoading(false))                             
+        } else {
+            task()  
+            .then(respuesta=> setData(respuesta))
+            .catch((err)=> console.log(err))
+            .finally(()=>setLoading(false))                 
+        }
+    }, [id])
+
     
-  }, [])
-   
-  // setData(resp.find(item => item.id === "1"))
+
+  
+  //  useEffect(() => {
+    //  task
+      //.then(resp => setData(resp))
+      //.catch(err => console.log(err))
+      
+    //}, [])
+    
+
  
 
   return (

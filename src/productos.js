@@ -11,9 +11,19 @@ export const productos = [
 ]
 
 
-export const task = new Promise ((resolve, reject) => (
+export const task = (id) => {
+  return new Promise ((resolve, reject) => (
     setTimeout (() => {
-      resolve(productos)
+      const query = id ? productos.find(productos => productos.id === id) : productos
+      resolve(query)
 
     } ,2000 )
   ) )   
+}
+
+//export const task = new Promise ((resolve, reject) => (
+  //setTimeout (() => {
+    //resolve(productos)
+
+  //} ,2000 )
+//) ) 
