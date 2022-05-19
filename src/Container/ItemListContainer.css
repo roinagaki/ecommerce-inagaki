@@ -1,0 +1,9 @@
+.itemListContainer {
+    width: 100%;
+    min-height: calc(100vh - 85px);
+    display: inline-block;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+}
+

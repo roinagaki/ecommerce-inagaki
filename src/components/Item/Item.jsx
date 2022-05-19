@@ -1,28 +1,24 @@
 import React from 'react'
-import { Card , Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import './Item.css'
 
 
 const Item = ({el}) => {
-    const{name, price, img}= el
+    const{name, price, img, categoria, id}= el
   return (
-      <Container>
-        
-        <Card  style={{ width: '18rem' }} >
-            <Card.Img  variant="top " src= {img} className="h-30" />
-        <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          {price}
-        </Card.Text>
-        <button>Detalle</button>
-        </Card.Body>
-        </Card>
-        
-      
-   
-      </Container>
+    <div className="item">
+    <img className="item__img" src={img} alt="" />
+    <div className="item__filter"></div>
+    <div className='item__info'>
+        <p className='item__category'>{categoria}</p>
+        <h3 className="item__title">{name}</h3>
+        <p className='item__price'>{`Precio: $${price}`}</p>
+        <Link to={`/detail/${id}`}>
+            <button className="item__addBtn" >Agregar al pedido</button>
+        </Link>
+    </div>
+</div>
     )
 }
 

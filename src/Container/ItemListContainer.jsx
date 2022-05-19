@@ -1,7 +1,9 @@
 import { useEffect, useState} from "react"
-import { task } from "../../productos"
-import ItemList from "../ItemList/ItemList"
+import { task } from "../productos"
+import ItemList from "../components/ItemList/ItemList"
 import { useParams } from 'react-router-dom'
+import './ItemListContainer.css'
+
 
 
 
@@ -14,7 +16,7 @@ const ItemListContainer = ( { saludar } ) => {
     useEffect(() => {
         if (id) {
             task()  
-            .then(respuesta=> setData(respuesta))
+            .then(respuesta=> setData(respuesta.filter((prods) => prods.category === id)))
             .catch((err)=> console.log(err))
             .finally(()=>setLoading(false))                             
         } else {
@@ -26,23 +28,15 @@ const ItemListContainer = ( { saludar } ) => {
     }, [id])
 
     
-
-  
-  //  useEffect(() => {
-    //  task
-      //.then(resp => setData(resp))
-      //.catch(err => console.log(err))
-      
-    //}, [])
     
 
  
 
   return (
-    <div>
+    <div className="itemListContainer">
     <div>{saludar}</div>
     <div style={{ display: 'flex', flexDirection:'row' , flexWrap:'wrap'}}>
-    <ItemList data={data}/>
+      {loading ? <h2>Cargando...</h2> : <ItemList data={data}/> }
     </div>
     </div>
   )
