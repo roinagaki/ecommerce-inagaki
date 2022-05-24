@@ -1,15 +1,15 @@
 .itemDetail {
-    width: 100%;
-    max-width: 480px;
+    max-width: 800px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin: 1rem;
+    margin: 2rem;
     padding: 1rem;
     background-color: palegoldenrod;
     border-radius: 20px;
 }
 .itemDetail__img {
+    display: block;
     border-radius: 20px;
 }
 .itemDetail__info {

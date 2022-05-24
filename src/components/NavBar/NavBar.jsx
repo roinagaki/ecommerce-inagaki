@@ -16,8 +16,8 @@ return(
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="me-auto">
-      <NavLink to= '/category/Indumentaria' >Indumentaria</NavLink>
-      <NavLink to= '/category/Amigurumis'>Amigurumis</NavLink>
+      <NavLink className="text" to= '/category/Indumentaria' >Indumentaria</NavLink>
+      <NavLink className="text" to= '/category/Amigurumis'>Amigurumis</NavLink>
     </Nav>
     <CartWidget/>
   </Navbar.Collapse>

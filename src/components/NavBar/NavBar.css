@@ -1,6 +1,16 @@
 .navbar{
-    background-image: url("https://blog.upandscrap.com/wp-content/uploads/2020/09/que-es-tricot.jpg");
-    height: 27rem;  
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.menzig.style%2Fa%2Flana-tipos-para-que-sirven-cual-es-mejor%2F&psig=AOvVaw3UdmUq-nHktaE8TZAUQwQO&ust=1653413055949000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJjPw-CU9vcCFQAAAAAdAAAAABAT");
+    height: 20rem; 
+    text-decoration: none; 
+}
+
+.text{
+    text-decoration: none;
+    padding: 0.5rem;
+    align-content: space-between;
+    color: palevioletred;
+    font-size: large;
+    
 }
 
 

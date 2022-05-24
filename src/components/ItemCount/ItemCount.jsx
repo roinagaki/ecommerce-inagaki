@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
- export const ItemCount = ({stock, initial, onAdd}) => {
+ export const ItemCount = ({stock, initial, onAdd, handleInputType}) => {
 
     const [count, setCount] = useState(initial);
 
@@ -17,7 +17,12 @@ import { useState } from "react"
         }
     };
 
-    const onClick = () => { onAdd = console.log(count) }
+    // const onClick = () => { onAdd = console.log(count) }
+
+    function addToCart() {
+     
+      handleInputType();
+  }
 
   return (
     <section className='itemCount'>
@@ -30,7 +35,7 @@ import { useState } from "react"
       type='submit'
       className='count__button'
       value={count}
-      onClick = { onClick }
+      onClick = { addToCart }
     >
       AGREGAR AL CARRITO
     </button>
