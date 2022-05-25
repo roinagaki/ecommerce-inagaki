@@ -7,7 +7,7 @@
     padding: 0rem 0.5rem 0rem 0.4rem;
     border-radius: 15%;
     position: absolute;
-    line-height: 2rem;
+    line-height: 1rem;
     transform: translateX(10%) translateY(10%);
     font-size: 1.2rem;
     font-weight: bold;
@@ -15,7 +15,7 @@
 
 @media (min-width: 768px) {
     .cartWidget__icon {
-        font-size: 3.5rem;
+        font-size: 1.5rem;
     }
     .cartWidget__counter {
         font-size: 1.5rem;

@@ -5,10 +5,14 @@ import './ItemDetail.css'
 
 
 
-const  ItemDetail = ({data, onAdd, item}) => {
+const  ItemDetail = ({data, item}) => {
   const [inputType, setInputType] = useState('itemCount');
   
   
+function onAdd(quantity) {
+    addToCart({...item, quantity})
+} 
+
 
 function handleInputType() {
   setInputType('ButtonsCard');
