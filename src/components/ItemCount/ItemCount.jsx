@@ -5,37 +5,39 @@ import { useState } from "react"
 
     const [count, setCount] = useState(initial);
 
-    const restar = () =>{
+    const rest = () =>{
         if (count > 1) {
             setCount(count - 1);
         }
     };
 
-    const sumar =() => {
+    const sum =() => {
         if (count < stock) {
             setCount(count + 1);
         }
     };
 
+    function addItem() {
+      onAdd(count);
+  }
+
     // const onClick = () => { onAdd = console.log(count) }
 
-    function addToCart() {
+  //   function addToCart() {
      
-      handleInputType();
-  }
+  //     handleInputType();
+  // }
 
   return (
     <section className='itemCount'>
     <ul className='count__list'>
-      <button type='button' onClick={restar}>-</button>
+      <button type='button' onClick={rest}>-</button>
       <span>{count}</span>
-      <button type='button' onClick={sumar}>+</button>
+      <button type='button' onClick={sum}>+</button>
     </ul>
-    <button
-      type='submit'
-      className='count__button'
-      value={count}
-      onClick = { addToCart }
+    <button className='count__button'
+      // value={count}
+      onClick = { addItem }
     >
       AGREGAR AL CARRITO
     </button>

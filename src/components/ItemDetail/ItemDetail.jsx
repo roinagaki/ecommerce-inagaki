@@ -1,23 +1,27 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
+import { useCartContext } from '../../Context/CartContext';
 import ButtonCard from '../ButtonCard/ButtonCard';
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
 
 
-const  ItemDetail = ({data, item}) => {
+const  ItemDetail = ({data}) => {
   const [inputType, setInputType] = useState('itemCount');
   
+  const {addToCart} = useCartContext()
   
-function onAdd(quantity) {
-    addToCart({...item, quantity})
+  const onAdd = (cant) => {
+  
+    addToCart( { ...data, cantidad: cant } )
+    setInputType('ButtonCard');
 } 
 
+    
 
-function handleInputType() {
-  setInputType('ButtonsCard');
-}
-  
+ 
+// console.log(cartList)
+
   const {name, price, img}= data
 
   return (
@@ -27,7 +31,7 @@ function handleInputType() {
         <h3 className="itemDetail__title">{name}</h3>
         <p className="itemDetail__detail">{price}</p>
         {inputType === 'itemCount' ?
-       <ItemCount initial={1} stock={5} onAdd={onAdd} handleInputType={handleInputType}/>:
+       <ItemCount initial={1} stock={5} onAdd={onAdd}/>:
             <ButtonCard/>}
     </div>
 </div>

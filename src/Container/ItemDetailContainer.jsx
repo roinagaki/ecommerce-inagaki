@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
            
     }, [])
     
-   console.log(detailId)
+  //  console.log(detailId)
 
   return (
     <div className='ItemDetailContainer'>
