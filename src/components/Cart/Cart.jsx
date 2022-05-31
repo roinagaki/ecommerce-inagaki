@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const { cartList, clearCart, totalCount, removeItem, totalPrice } = useCartContext()
 
-  if (!totalCount) {
-    return (
-        <div className="cart">
-            <h1>El pedido está vacío</h1>
-            <Link  to='/'>
-                <button>Volver al menú</button>
-            </Link>
-        </div>
-    );
-}
+
 
   return (
+    <div>
+    {cartList.length === 0 ? 
+        <div className="container mt-5">
+            <label className="alert alert-warning">NO HAY PRODUCTOS EN EL CARRITO</label><br />
+            <Link to='/'>
+                <button className='btn btn-outline-primary'>Seleccionar productos</button>
+            </Link>
+        </div>
+:
+<>
+
     <div className="cart">
       <h1 className="cart__title">Su pedido:</h1>
       {cartList.map(el => <li>{el.name} - {el.price} - {el.cantidad} - <Button variant="danger" onClick={()=>removeItem(el.id)}> X {removeItem}</Button></li>)}
@@ -25,7 +27,12 @@ const Cart = () => {
       <button onClick={clearCart}>Vaciar pedido</button>
 
     </div>
+    </>
+}
+</div>
   )
 }
+  
+  
 
 export default Cart
