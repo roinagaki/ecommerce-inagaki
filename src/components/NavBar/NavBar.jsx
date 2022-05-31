@@ -6,8 +6,9 @@ import './NavBar.css';
 import imgLogo from '../Img/Logo.png'
 
 
-export default function NavBar(){
 
+export default function NavBar(){
+  
 return(
 <Navbar className="navbar" expand="lg">
 <Container>
@@ -20,6 +21,7 @@ return(
       <NavLink className="text" to= '/category/Indumentaria' >Indumentaria</NavLink>
       <NavLink className="text" to= '/category/Amigurumis'>Amigurumis</NavLink>
     </Nav>
+    
     <CartWidget/>
   </Navbar.Collapse>
 
