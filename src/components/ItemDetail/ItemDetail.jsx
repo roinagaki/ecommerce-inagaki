@@ -23,7 +23,7 @@ const  ItemDetail = ({data}) => {
 // console.log(cartList)
 
   const {name, price, img}= data
-
+  console.log(img)
   return (
     <div className="itemDetail">
     <img className="itemDetail__img" src={img} alt="" />
@@ -38,5 +38,6 @@ const  ItemDetail = ({data}) => {
 
   )
 }
+
 
 export default ItemDetail

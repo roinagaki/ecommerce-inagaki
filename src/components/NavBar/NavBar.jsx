@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
-import imgLogo from '../Img/Logo.png'
+
 
 
 
@@ -13,7 +13,7 @@ return(
 <Navbar className="navbar" expand="lg">
 <Container>
   <Link to= '/'>
-    <img className="brand" src={imgLogo} alt="" />
+    <img className="brand" src='../Img/Logo.png' alt="" />
   </Link>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
