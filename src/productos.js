@@ -24,7 +24,7 @@ export const productos = [
     {id:"8", category: "Amigurumis", name:"gallo", price:"1600", img: imgGallo},
     {id:"9", category: "Amigurumis", name:"Hipopotamo", price:"1750", img: imgHipo},
     {id:"10", category: "Amigurumis", name:"muneca", price:"2000", img:imgMuneca},
-    {id:"11", category: "Amigurumis", name:"obeja", price:"1600", img: imgObeja},
+    {id:"11", category: "Amigurumis", name:"oveja", price:"1600", img: imgObeja},
     {id:"12", category: "Amigurumis", name:"zorro", price:"1700", img:imgZorro},
 
 ]

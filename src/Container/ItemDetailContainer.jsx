@@ -3,24 +3,37 @@ import { task } from '../productos';
 import ItemDetail from '../components/ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom'
 import './ItemDetailContainer.css'
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
     const [data, setData] = useState({});
+    const [loading, setLoading] = useState(true)
     const { detailId } = useParams()
-
+   
+   
     useEffect(() => {
-        task(detailId)   
-        .then(respuesta=> setData(respuesta))
-        .catch((err)=> console.log(err))
-           
+      const db = getFirestore()
+      const dbQwery = doc(db, 'items', detailId)
+      getDoc(dbQwery)
+      .then(resp => setData( { id: resp.id, ...resp.data() } ) ) 
+      .catch((err)=> console.log(err))
+      .finally(setLoading(false)) 
     }, [])
+
+
+    // useEffect(() => {
+    //     task(detailId)   
+    //     .then(respuesta=> setData(respuesta))
+    //     .catch((err)=> console.log(err))
+           
+    // }, [])
     
   //  console.log(detailId)
 
   return (
     <div className='ItemDetailContainer'>
-        <ItemDetail data={data}/>
-    </div>
+      {loading ? <h2>Cargando...</h2> : <ItemDetail data={data}/> }    
+      </div>
     
   )
 }
