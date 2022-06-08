@@ -6,7 +6,7 @@ import './Item.css'
 
 const Item = ({el}) => {
     const{name, price, img, category, id}= el
-    console.log(img)
+    
   return (
     <div className="item">
     <img className="item__img" src={img} alt="" />

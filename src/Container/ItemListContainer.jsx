@@ -32,7 +32,7 @@ const ItemListContainer = ( { saludar } ) => {
 
    
     
-    console.log(data)
+    
  
 
   return (
