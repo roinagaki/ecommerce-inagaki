@@ -1,5 +1,4 @@
 import { useEffect, useState} from "react"
-import { task } from "../productos"
 import ItemList from "../components/ItemList/ItemList"
 import { useParams } from 'react-router-dom'
 import './ItemListContainer.css'
@@ -8,7 +7,7 @@ import { getFirestore, collection, getDocs, where, query } from 'firebase/firest
 
 
 
-const ItemListContainer = ( { saludar } ) => {
+const ItemListContainer = (  ) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams() 
@@ -37,7 +36,7 @@ const ItemListContainer = ( { saludar } ) => {
 
   return (
     <div className="itemListContainer">
-    <div>{saludar}</div>
+   
     <div style={{ display: 'flex', flexDirection:'row' , flexWrap:'wrap'}}>
       {loading ? <h2>Cargando...</h2> : <ItemList data={data}/> }
     </div>

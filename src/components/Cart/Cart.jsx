@@ -1,11 +1,19 @@
 import { useCartContext } from "../../Context/CartContext"
 import {Button} from 'react-bootstrap'
 import { Link } from "react-router-dom"
+import Form from "../Form/Form"
+
+
+
 
 
 const Cart = () => {
   
-  const { cartList, clearCart, removeItem, totalPrice, createOrder } = useCartContext()
+  const { cartList, clearCart, removeItem, totalPrice } = useCartContext()
+  
+  
+ 
+  
 
   return (
         <div>
@@ -20,21 +28,29 @@ const Cart = () => {
     :
 
     <>
-        
+      <div className="cart_container">
         <div className="cart">
           <h1 className="cart__title">Su pedido:</h1>
-          {cartList.map(el => <li><img src={el.img} style={{width: 60}} alt="" /> - {el.name} - {el.price} - {el.quantity} - <Button variant="danger" onClick={()=>removeItem(el.id)}> X {removeItem}</Button></li>)}
+          {cartList.map(el => <li key={el.id}><img src={el.img} style={{width: 60}} alt="" /> - {el.name} - {el.price} - {el.quantity} - <Button variant="danger" onClick={()=>removeItem(el.id)}> X </Button></li>)}
           <h2>El precio total es {totalPrice() !== 0 && totalPrice()} </h2>
           <button onClick={clearCart}>Vaciar pedido</button>
-          <Button variant="success" onClick={createOrder}>Comprar </Button>
-
+         <br /><br /> <br />
+          <Form/>
+          
+          
         </div>
+      </div>
+      
       </>
-      }
-    </div>
-        
+    }
+   </div>
+    
+         
     ) 
   }
+
+
+  
     
   
 

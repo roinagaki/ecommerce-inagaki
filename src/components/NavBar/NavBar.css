@@ -1,15 +1,22 @@
 .navbar{
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.menzig.style%2Fa%2Flana-tipos-para-que-sirven-cual-es-mejor%2F&psig=AOvVaw3UdmUq-nHktaE8TZAUQwQO&ust=1653413055949000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJjPw-CU9vcCFQAAAAAdAAAAABAT");
-    height: 20rem; 
+    height: 10rem; 
     text-decoration: none; 
+    background-color: grey;
+    text-align: center;
+    
+    
+    
+
 }
 
 .text{
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 2rem;
     align-content: space-between;
-    color: palevioletred;
+    color: papayawhip;
     font-size: large;
+    align-items: center;
+    margin: 3px;
     
 }
 

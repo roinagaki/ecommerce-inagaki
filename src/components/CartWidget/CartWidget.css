@@ -1,9 +1,9 @@
 .cartWidget__icon {
-    color: black
+    color: lightcyan;
 }
 
 .cartWidget__counter {
-    color: black;
+    color: lightcyan;
     padding: 0rem 0.5rem 0rem 0.4rem;
     border-radius: 15%;
     position: absolute;

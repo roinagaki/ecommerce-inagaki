@@ -1,7 +1,8 @@
 import { useState } from "react"
+import './ItemCount.css'
 
 
- export const ItemCount = ({stock, initial, onAdd, handleInputType}) => {
+ export const ItemCount = ({stock, initial, onAdd}) => {
 
     const [count, setCount] = useState(initial);
 
@@ -21,22 +22,16 @@ import { useState } from "react"
       onAdd(count);
   }
 
-    // const onClick = () => { onAdd = console.log(count) }
-
-  //   function addToCart() {
-     
-  //     handleInputType();
-  // }
-
+    
   return (
     <section className='itemCount'>
     <ul className='count__list'>
       <button type='button' onClick={rest}>-</button>
       <span>{count}</span>
-      <button type='button' onClick={sum}>+</button>
+      <button type='button'  onClick={sum}>+</button>
     </ul>
     <button className='count__button'
-      // value={count}
+      
       onClick = { addItem }
     >
       AGREGAR AL CARRITO

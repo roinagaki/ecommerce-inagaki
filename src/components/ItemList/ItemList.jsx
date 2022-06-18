@@ -11,5 +11,5 @@ const ItemList = ({data}) => {
     </div>
   )
 }
-//style={ { display:'flex' } }
+
 export default ItemList

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import './ButtonCard.css'
 
 export default function ButtonCard () {
 

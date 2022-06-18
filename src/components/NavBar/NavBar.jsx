@@ -10,7 +10,7 @@ import './NavBar.css';
 export default function NavBar(){
   
 return(
-<Navbar className="navbar" expand="lg">
+<Navbar  className="navbar" expand="lg">
 <Container>
   <Link to= '/'>
     <img className="brand" src='../Img/Logo.png' alt="" />

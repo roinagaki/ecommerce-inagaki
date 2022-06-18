@@ -19,19 +19,17 @@ const  ItemDetail = ({data}) => {
 
     
 
- 
-// console.log(cartList)
 
-  const {name, price, img}= data
+  const {name, price, img, stock}= data
   
   return (
     <div className="itemDetail">
     <img className="itemDetail__img" src={img} alt="" />
     <div className='itemDetail__info'>
         <h3 className="itemDetail__title">{name}</h3>
-        <p className="itemDetail__detail">{price}</p>
+        <p className="itemDetail__detail">{'$'+ price}</p>
         {inputType === 'itemCount' ?
-       <ItemCount initial={1} stock={5} onAdd={onAdd}/>:
+       <ItemCount initial={1} stock={stock} onAdd={onAdd}/>:
             <ButtonCard/>}
     </div>
 </div>

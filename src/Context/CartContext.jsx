@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from 'firebase/firestore'
+import swal from 'sweetalert'
 
 const CartContext = createContext([])
 
@@ -8,6 +9,13 @@ export const useCartContext = () => useContext(CartContext)
 const CartContextProv =({children}) =>{
 
     const [cartList, setCartList] = useState([])
+    const [buyer, setBuyer] = useState({
+        name: "",
+        email: "",
+        emailConfirm: "",
+        lastName: "",
+       
+      });
     
 
     function addToCart(item){
@@ -45,7 +53,7 @@ const CartContextProv =({children}) =>{
     function createOrder() {
         let order = {}
         
-        order.buyer = {name: 'rodrigo', email: 'rodrigoinagaki@hotmail.com', phone: '212345667' };
+        order.buyer = {buyer};
         order.total = totalPrice();
         order.items = cartList.map(cartList => {
             const id = cartList.id;
@@ -63,7 +71,7 @@ const CartContextProv =({children}) =>{
         
                 await getDocs(queryUpdateStocks)
                 .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-                stock: res.data().stock - cartList.find(item => item.id === res.id).newStock
+                stock: res.data().stock - cartList.find(item => item.id === res.id).quantity
             }) ))
                 .finally(()=> console.log('actulalizado'))
 
@@ -76,7 +84,11 @@ const CartContextProv =({children}) =>{
     const db = getFirestore()
     const queryCollectionOrders = collection(db, 'orders')
     addDoc(queryCollectionOrders, order)
-    .then(resp => console.log(resp))
+    .then(resp => swal({ 
+          title: `Gracias por su compra !`,
+          text: "Su número de orden es " + resp.id,
+          icon: "success",
+        }))
     .then(() => updateStocks())
     .catch(err=> console.log(err))
     .finally(() => clearCart())   

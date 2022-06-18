@@ -1,0 +1,22 @@
+.count__button{
+    border: none;
+    background: palegoldenrod;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 1rem;
+    color: brown;
+
+}
+
+.count__list button{
+    border: none;
+    background: palegoldenrod;  
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 1rem;
+    color: brown;
+}
