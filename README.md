@@ -19,4 +19,4 @@ Proyecto de Ecommerce de indumentaria y Amigurimus tejidos.
 
 ## Deploy
 
-El deploy del sitio fue realizado en Netlify, se encuentra en este link => adelfaecommerce.netlify.app
+El deploy del sitio fue realizado en Netlify, se encuentra en este link => https://adelfaecommerce.netlify.app/
