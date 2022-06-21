@@ -38,7 +38,8 @@ export const Form = () => {
     
   
     return (
-      <div className="cartInfo">
+      
+      <div className="cart-form mt-5 cartInfo">
         <h2>Por favor complete sus datos:</h2>
         <form action=""  >
           <div className="form_cart">
@@ -87,6 +88,7 @@ export const Form = () => {
         </form>
         <br />
       </div>
+      
     );
   };
 

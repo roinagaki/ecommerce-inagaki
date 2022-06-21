@@ -32,7 +32,7 @@ const Cart = () => {
         <div className="cart">
           <h1 className="cart__title">Su pedido:</h1>
           {cartList.map(el => <li key={el.id}><img src={el.img} style={{width: 60}} alt="" /> - {el.name} - {el.price} - {el.quantity} - <Button variant="danger" onClick={()=>removeItem(el.id)}> X </Button></li>)}
-          <h2>El precio total es {totalPrice() !== 0 && totalPrice()} </h2>
+          <h2>El precio total es {totalPrice() !== 0 && '$' + totalPrice()} </h2>
           <button onClick={clearCart}>Vaciar pedido</button>
          <br /><br /> <br />
           <Form/>

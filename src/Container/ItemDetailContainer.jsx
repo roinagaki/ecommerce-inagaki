@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
       .then(resp => setData( { id: resp.id, ...resp.data() } ) ) 
       .catch((err)=> console.log(err))
       .finally(setLoading(false)) 
-    }, [])
+    }, [detailId])
 
 
     
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
   return (
     <div className='ItemDetailContainer'>
       {loading ? <h2>Cargando...</h2> : <ItemDetail data={data}/> }    
-      </div>
+    </div>
     
   )
 }

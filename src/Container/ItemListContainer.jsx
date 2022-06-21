@@ -37,9 +37,9 @@ const ItemListContainer = (  ) => {
   return (
     <div className="itemListContainer">
    
-    <div style={{ display: 'flex', flexDirection:'row' , flexWrap:'wrap'}}>
-      {loading ? <h2>Cargando...</h2> : <ItemList data={data}/> }
-    </div>
+      <div style={{ display: 'flex', flexDirection:'row' , flexWrap:'wrap'}}>
+        {loading ? <h2>Cargando...</h2> : <ItemList data={data}/> }
+      </div>
     </div>
   )
 }
